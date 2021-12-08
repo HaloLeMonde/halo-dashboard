@@ -7,7 +7,7 @@ const apiClient = Axios.create({
 
 export default {
     instance: apiClient,
-    url = {
+    url : {
         haloInfinite : '/hi/',
         haloHMCC: '/hmcc/',
         haloFive : '/h5/'
