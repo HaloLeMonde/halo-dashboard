@@ -7,6 +7,17 @@ const apiClient = Axios.create({
 
 export default {
     instance: apiClient,
-    haloInfinite = `${process.env.API_URL}/hi/`
+    url = {
+        haloInfinite : '/hi/',
+        haloHMCC: '/hmcc/',
+        haloFive : '/h5/'
+    },
     
+    getHIUser(gamerTag) {
+        return this.instance
+            .get(`${url.haloInfinite}stats/players/${gamerTag}/csrs?season=1`)
+            .then((response) => {
+                    console.log('response.data :>> ', response.data);
+        });
+    },
 }
