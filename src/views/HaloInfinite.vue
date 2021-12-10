@@ -2,7 +2,8 @@
   <v-container fluid>
     <motd />
     <search-bar @clicked="getPlayerData" />
-    <player-card v-bind="searchedPlayer" />
+    <player-card />
+    <!--<player-card v-bind="searchedPlayer" />-->
   </v-container>
 </template>
 

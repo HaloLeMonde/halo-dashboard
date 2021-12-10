@@ -1,5 +1,5 @@
 <template>
-  <v-banner color="secondary" class="slider__root">
+  <v-banner color="secondary" class="slider__root" v-if="!isLoading">
     <transition-group name="slide" tag="div" class="motd-slider">
       <div v-for="number in [currentTxt]" :key="number">
         <p>
@@ -17,20 +17,26 @@ export default {
   data() {
     return {
       currentTxt: 0,
+      isLoading: true,
     };
   },
   computed: mapState({
     motd: (state) => state.infinite.motd,
   }),
   created() {
-    this.$store.dispatch("infinite/getMotd");
+    this.$nextTick(() => {
+      this.$store.dispatch("infinite/getMotd");
+    });
   },
   mounted() {
     setInterval(() => {
-      if (this.currentTxt + 1 > this.motd.data.length) {
-        this.currentTxt = 0;
-      } else {
-        this.currentTxt++;
+      if (this.motd.length !== 0) {
+        this.isLoading = false;
+        if (this.currentTxt + 1 > this.motd.count - 1) {
+          this.currentTxt = 0;
+        } else {
+          this.currentTxt++;
+        }
       }
     }, 5000);
   },
