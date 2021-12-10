@@ -2,7 +2,7 @@ import Axios from "axios";
 
 const apiClient = Axios.create({
   baseURL: `${process.env.VUE_APP_API_URL}`,
-  timeout: 3000,
+  //timeout: 3000,
   headers: {
     Authorization:
       "Cryptum-Token 6WMbEb98FNACgUlJz2XdxhD9fuox8GT2ewuRMqu1hOz1lBi0DOKSACULEHwg7gn4",
@@ -33,6 +33,20 @@ export default {
       )
       .then((recentMatches) => {
         return recentMatches.data;
+      });
+  },
+  getApparence(gamerTag) {
+    return this.instance
+      .get(`${this.url.haloHMCC}appearance/players/${gamerTag}`)
+      .then((apparence) => {
+        return apparence.data;
+      });
+  },
+  getStats(gamerTag) {
+    return this.instance
+      .get(`${this.url.haloHMCC}stats/players/${gamerTag}/service-record`)
+      .then((stats) => {
+        return stats.data;
       });
   },
 };
