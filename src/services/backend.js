@@ -1,11 +1,7 @@
 import Axios from "axios";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const apiClient = Axios.create({
   baseURL: `${process.env.VUE_APP_API_URL}`,
-  timeout: 3000,
   headers: {
     Authorization:
     `Cryptum-Token ${process.env.VUE_APP_API_TOKEN}`,
@@ -15,7 +11,6 @@ const apiClient = Axios.create({
 });
 
 export default {
-  console.log('apiclient :>> ', apiclient.Authorization);
   instance: apiClient,
   url: {
     haloInfinite: "/hi/",
@@ -36,7 +31,7 @@ export default {
 
   getHIPlayerMatches(gamerTag) {
     return this.instance
-      .get(`${this.url.haloInfinite}stats/players/${gamerTag}/matches`)
+      .get(`${this.url.haloInfinite}stats/players/${gamerTag}/matches?mode=matchmade`)
       .then((response) => {
         return response.data;
       });

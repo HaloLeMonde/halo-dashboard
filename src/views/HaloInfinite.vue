@@ -1,20 +1,16 @@
 <template>
-    <div id="recentMatches">
-        <h1>Matchs récent</h1>
-        <pre> {{ listPlayerMatches }} </pre>
-    </div>
+<div></div>
 </template>
 
 <script>
-import { mapState } from "vuex";
 export default {
-    computed: mapState({
-        listPlayerMatches: (state) => state.infinite.listPlayerMatches,
-    }),
-    mounted() {
-        if (this.listPlayerMatches.length === 0) {
-            this.$store.dispatch("infinite/getMatches");
-        }
-    },
-};
+}
 </script>
+
+<style lang="scss">
+    .haloInfinite{
+        &__root{
+            background: linear-gradient(180deg, #4B4B4B 0%, #14191C 100%);
+        }
+    }
+</style>
