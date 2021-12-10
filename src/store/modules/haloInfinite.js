@@ -50,7 +50,7 @@ export const actions = {
 };
 
 export const getters = {
-  motdGetter(state) {
-    return state.motd;
+  getUserData(state) {
+    return state.searchedPlayer;
   },
 };

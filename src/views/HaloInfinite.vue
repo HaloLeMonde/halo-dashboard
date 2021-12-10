@@ -2,8 +2,10 @@
   <v-container fluid>
     <motd />
     <search-bar @clicked="getPlayerData" />
-    <player-card />
-    <!--<player-card v-bind="searchedPlayer" />-->
+    <player-card
+      v-if="searchedPlayer !== null"
+      v-bind:playerData="searchedPlayer"
+    />
   </v-container>
 </template>
 
@@ -15,12 +17,12 @@ export default {
   components: { SearchBar, PlayerCard, Motd },
   data() {
     return {
-      searchedPlayer: {},
+      searchedPlayer: null,
     };
   },
   watch: {
     searchedPlayer(val) {
-      console.log(`this.searchedPlayer`, val);
+      this.searchedPlayer = val;
     },
   },
   methods: {

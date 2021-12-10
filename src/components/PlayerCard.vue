@@ -1,44 +1,45 @@
 <template>
   <v-container>
-    <!-- <v-card :color="item.color" dark>
+    <v-card dark>
       <div class="d-flex flex-no-wrap justify-space-between">
         <div>
-          <v-card-title class="text-h5" v-text="item.title"></v-card-title>
+          <v-card-title
+            class="text-h5"
+            v-text="playerData.additional.gamertag"
+          ></v-card-title>
 
-          <v-card-subtitle v-text="item.artist"></v-card-subtitle>
-
+          <v-card-subtitle>
+            Plateforme : {{ playerData.additional.input }} -- Queue :
+            {{ playerData.additional.queue }}
+          </v-card-subtitle>
           <v-card-actions>
             <v-btn
-              v-if="item.artist === 'Ellie Goulding'"
-              class="ml-2 mt-3"
-              fab
-              icon
-              height="40px"
-              right
-              width="40px"
+              class="ml-2 mt-5"
+              outlined
+              rounded
+              small
+              :to="{
+                name: 'PlayerProfile',
+                params: { gamertag: playerData.additional.gamertag },
+              }"
             >
-              <v-icon>mdi-play</v-icon>
-            </v-btn>
-
-            <v-btn v-else class="ml-2 mt-5" outlined rounded small>
-              START RADIO
+              Voir le profil
             </v-btn>
           </v-card-actions>
         </div>
-
         <v-avatar class="ma-3" size="125" tile>
-          <v-img :src="item.src"></v-img>
+          <v-img :src="playerData.data.current.tier_image_url"></v-img>
         </v-avatar>
       </div>
-    </v-card> -->
+    </v-card>
   </v-container>
 </template>
 
 <script>
 export default {
   name: "PlayerCard",
-  // props: {
-  //   playerData: Object,
-  // },
+  props: {
+    playerData: Object,
+  },
 };
 </script>
