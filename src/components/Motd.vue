@@ -14,6 +14,9 @@
 <script>
 import { mapState } from "vuex";
 export default {
+  props: {
+    game: String,
+  },
   data() {
     return {
       currentTxt: 0,

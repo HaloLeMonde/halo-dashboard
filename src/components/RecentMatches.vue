@@ -1,20 +1,28 @@
 <template>
-   <div id="recentMatches">
-      <h1>Mes matchs</h1>
-      <pre> {{ listPlayerMatches }} </pre>
-   </div>
+  <v-container>
+    <h2>Derniers matchs</h2>
+    <recent-matches-list
+      v-bind:matches="listPlayerMatches"
+      v-if="listPlayerMatches !== null"
+    />
+  </v-container>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import RecentMatchesList from "./RecentMatchesList.vue";
 export default {
-   computed: mapState({
-      listPlayerMatches: (state) => state.infinite.listPlayerMatches,
-   }),
-   mounted() {
-      if (this.listPlayerMatches.length === 0) {
-         this.$store.dispatch("infinite/getMatches");
-      }
-   },
+  components: { RecentMatchesList },
+  props: {
+    player: String,
+  },
+  computed: mapState({
+    listPlayerMatches: (state) => state.infinite.listPlayerMatches,
+  }),
+  mounted() {
+    if (this.listPlayerMatches.length === 0) {
+      this.$store.dispatch("infinite/getMatches", this.player);
+    }
+  },
 };
 </script>

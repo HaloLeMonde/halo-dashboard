@@ -22,8 +22,8 @@ export const mutations = {
 };
 
 export const actions = {
-  getMatches({ commit }) {
-    backend.getHIPlayerMatches("Zeny IC").then((listPlayerMatches) => {
+  getMatches({ commit }, gamerTag) {
+    backend.getHIPlayerMatches(gamerTag).then((listPlayerMatches) => {
       commit("SET_LIST_PLAYER_MATCHES", listPlayerMatches);
       return listPlayerMatches;
     });

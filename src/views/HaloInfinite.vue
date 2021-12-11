@@ -5,6 +5,7 @@
     <player-card
       v-if="searchedPlayer !== null"
       v-bind:playerData="searchedPlayer"
+      v-bind:noButton="true"
     />
   </v-container>
 </template>
@@ -18,6 +19,7 @@ export default {
   data() {
     return {
       searchedPlayer: null,
+      infinite: "infinite",
     };
   },
   watch: {

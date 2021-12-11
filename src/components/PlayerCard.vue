@@ -1,11 +1,11 @@
 <template>
-  <v-container>
+  <v-container v-if="playerData !== null">
     <v-card dark>
       <div class="d-flex flex-no-wrap justify-space-between">
         <div>
           <v-card-title
             class="text-h5"
-            v-text="playerData.additional.gamertag"
+            v-text="'Gamertag : ' + playerData.additional.gamertag"
           ></v-card-title>
 
           <v-card-subtitle>
@@ -14,6 +14,7 @@
           </v-card-subtitle>
           <v-card-actions>
             <v-btn
+              v-if="noButton"
               class="ml-2 mt-5"
               outlined
               rounded
@@ -40,6 +41,7 @@ export default {
   name: "PlayerCard",
   props: {
     playerData: Object,
+    noButton: Boolean,
   },
 };
 </script>
