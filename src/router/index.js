@@ -4,7 +4,6 @@ import HMCC from "../views/HMCC/Hmcc.vue";
 import HaloInfinite from "../views/HaloInfinite.vue";
 import Halo5 from "../views/Halo5.vue";
 import PlayerProfile from "../views/PlayerProfile.vue";
-import Settings from "../views/Settings.vue";
 
 Vue.use(VueRouter);
 
@@ -28,11 +27,6 @@ const routes = [
     path: "/player/:gamertag",
     name: "PlayerProfile",
     component: PlayerProfile,
-  },
-  {
-    path: "/settings",
-    name: "Settings",
-    component: Settings,
   },
 ];
 

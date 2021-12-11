@@ -20,6 +20,18 @@
             </p>
             <p>Durée :{{ match.duration.human }}</p>
           </v-card-text>
+          <v-card-actions>
+            <v-btn
+              @click="shareMatch(match)"
+              class="ml-2 mt-5"
+              outlined
+              rounded
+              small
+              
+            >
+              Partager
+            </v-btn>
+          </v-card-actions>
         </div>
         <v-avatar class="ma-3" size="50%" tile>
           <v-img :src="match.details.map.asset.thumbnail_url"></v-img>
@@ -38,6 +50,18 @@ export default {
     toFirstUpperCase(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
+    shareMatch(match){
+      if (!("share" in navigator)) {
+        alert('Web Share API not supported.');
+        return;
+      }
+      navigator.share({
+        title: `Match sur ${match.details.map.name}`,
+        text: `Regarde ce match d'une durée ${match.duration.human} avec un kda ${match.stats.kda}`,
+      })
+      .then(() => console.log('Partage réussi'))
+      .catch(error => console.log('Erreur de partage:', error));
+    }
   },
 };
 </script>
