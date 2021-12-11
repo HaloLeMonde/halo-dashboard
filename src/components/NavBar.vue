@@ -45,7 +45,8 @@ export default {
       menuItems: [
           { title: 'Halo 5', path: '/haloFive'},
           { title: 'HMCC', path: '/hmcc'},
-          { title: 'Halo Infinite', path: '/halo-infinite'}
+          { title: 'Halo Infinite', path: '/halo-infinite'},
+          { title: 'Settings', path: '/settings'},
       ]
     }
   },
