@@ -1,8 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HMCC from "../views/HMCC/Hmcc.vue"
+import HMCC from "../views/HMCC/Hmcc.vue";
 import HaloInfinite from "../views/HaloInfinite.vue";
 import Halo5 from "../views/Halo5.vue";
+import PlayerProfile from "../views/PlayerProfile.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/halo-infinite",
     name: "HaloInfinite",
     component: HaloInfinite,
+  },
+  {
+    path: "/player/:gamertag",
+    name: "PlayerProfile",
+    component: PlayerProfile,
   },
 ];
 
