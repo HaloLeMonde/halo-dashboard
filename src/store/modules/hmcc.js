@@ -10,7 +10,8 @@ export const state = {
 export const mutations = {
   SET_LIST_RECENT_MATCHES(state, listRecentMatches) {
     state.listRecentMatches = listRecentMatches;
-  }, SET_APPARENCE(state, apparence) {
+  },
+  SET_APPARENCE(state, apparence) {
     state.apparence = apparence;
   },
   SET_STATS(state, statistic) {

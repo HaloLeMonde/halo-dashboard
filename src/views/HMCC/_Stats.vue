@@ -9,11 +9,10 @@
       <h2>Multiplayer</h2>
       <h3>Récap</h3>
       <pre>{{ statistic.data.multiplayer.summary }}</pre>
-      <v-data-table
-        :headers="headers"
-        :items="stats"
-        class="elevation-1"
-      ></v-data-table>
+
+      <v-card elevation="10" max-width="500" class="mx-auto">
+        <v-list> </v-list>
+      </v-card>
     </div>
   </div>
 </template>

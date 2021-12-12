@@ -4,8 +4,7 @@ const apiClient = Axios.create({
   baseURL: `${process.env.VUE_APP_API_URL}`,
   //timeout: 3000,
   headers: {
-    Authorization:
-      "Cryptum-Token 6WMbEb98FNACgUlJz2XdxhD9fuox8GT2ewuRMqu1hOz1lBi0DOKSACULEHwg7gn4",
+    Authorization: `Cryptum-Token ${process.env.VUE_APP_API_TOKEN}`,
     "Content-Type": "application/json",
     "Cryptum-API-Version": "2.3-alpha",
   },
