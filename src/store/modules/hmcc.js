@@ -34,12 +34,6 @@ export const actions = {
       return listRecentMatches;
     });
   },
-  getApparence({ commit }) {
-    backend.getApparence("Zeny IC").then((apparence) => {
-      commit("SET_APPARENCE", apparence);
-      return apparence;
-    });
-  },
 
   getStats({ commit }, gamerTag) {
     backend.getStats(gamerTag).then((statistic) => {

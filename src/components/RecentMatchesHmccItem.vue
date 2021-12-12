@@ -51,9 +51,6 @@ export default {
     match: {},
   },
   methods: {
-    toFirstUpperCase(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    },
     shareMatch(match) {
       if (!("share" in navigator)) {
         alert("Web Share API not supported.");
@@ -61,8 +58,8 @@ export default {
       }
       navigator
         .share({
-          title: `Match sur ${match.details.map.name}`,
-          text: `Regarde ce match d'une durée ${match.duration.human} avec un kda ${match.stats.kda}`,
+          title: `Match de ${match.additional.gamertag} sur ${match.details.map.name}`,
+          text: `Regarde ce match d'une durée ${match.duration.human} avec un kda ${match.stats.kdr}`,
         })
         .then(() => console.log("Partage réussi"))
         .catch((error) => console.log("Erreur de partage:", error));

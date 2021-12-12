@@ -67,13 +67,7 @@ export default {
         return recentMatches.data;
       });
   },
-  getApparence(gamerTag) {
-    return this.instance
-      .get(`${this.url.haloHMCC}appearance/players/${gamerTag}`)
-      .then((apparence) => {
-        return apparence.data;
-      });
-  },
+
   getStats(gamerTag) {
     return this.instance
       .get(`${this.url.haloHMCC}stats/players/${gamerTag}/service-record`)
