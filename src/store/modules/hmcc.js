@@ -28,8 +28,8 @@ export const mutations = {
 };
 
 export const actions = {
-  getRecentMatches({ commit }) {
-    backend.getRecentMatches("Zeny IC").then((listRecentMatches) => {
+  getRecentMatches({ commit }, gamerTag) {
+    backend.getRecentMatches(gamerTag).then((listRecentMatches) => {
       commit("SET_LIST_RECENT_MATCHES", listRecentMatches);
       return listRecentMatches;
     });
@@ -41,8 +41,8 @@ export const actions = {
     });
   },
 
-  getStats({ commit }) {
-    backend.getStats("Zeny IC").then((statistic) => {
+  getStats({ commit }, gamerTag) {
+    backend.getStats(gamerTag).then((statistic) => {
       commit("SET_STATS", statistic);
       return statistic;
     });

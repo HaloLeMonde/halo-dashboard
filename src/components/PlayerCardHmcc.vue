@@ -73,6 +73,34 @@
             >
               Voir le profil
             </v-btn>
+
+            <v-btn
+              v-if="noButton"
+              class="ml-2 mt-5"
+              outlined
+              rounded
+              small
+              :to="{
+                name: 'RecentMatches',
+                params: { gamertag: playerData.additional.gamertag },
+              }"
+            >
+              Match récents
+            </v-btn>
+
+            <v-btn
+              v-if="noButton"
+              class="ml-2 mt-5"
+              outlined
+              rounded
+              small
+              :to="{
+                name: 'Apparence',
+                params: { gamertag: playerData.additional.gamertag },
+              }"
+            >
+              Apparence
+            </v-btn>
           </v-card-actions>
         </div>
         <v-avatar class="ma-3" size="125" tile>
