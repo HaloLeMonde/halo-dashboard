@@ -43,7 +43,7 @@ export default {
       appTitle: 'Halo Dashboard',
       sidebar: false,
       menuItems: [
-          { title: 'Halo 5', path: '/haloFive'},
+
           { title: 'HMCC', path: '/hmcc'},
           { title: 'Halo Infinite', path: '/halo-infinite'},
       ]

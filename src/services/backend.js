@@ -15,7 +15,7 @@ export default {
   url: {
     haloInfinite: "/hi/",
     haloHMCC: "/hmcc/",
-    haloFive: "/h5/",
+   
   },
 
   /**
@@ -51,8 +51,6 @@ export default {
         return this.fetchMOTD(this.url.haloInfinite);
       case "haloHMCC":
         return this.fetchMOTD(this.url.haloHMCC);
-      case "haloFive":
-        return this.fetchMOTD(this.url.haloFive);
       default:
         break;
     }

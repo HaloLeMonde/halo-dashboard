@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HMCC from "../views/HMCC/Hmcc.vue";
 import HaloInfinite from "../views/HaloInfinite.vue";
-import Halo5 from "../views/Halo5.vue";
+
 import PlayerProfile from "../views/PlayerProfile.vue";
 import RecentMatches from "../views/HMCC/RecentMatches.vue";
 
@@ -13,11 +13,6 @@ const routes = [
     path: "/hmcc",
     name: "HMCC",
     component: HMCC,
-  },
-  {
-    path: "/haloFive",
-    name: "Halo5",
-    component: Halo5,
   },
   {
     path: "/halo-infinite",
