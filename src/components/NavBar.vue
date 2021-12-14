@@ -16,8 +16,10 @@
         <v-app-bar-nav-icon @click="sidebar = !sidebar">
         </v-app-bar-nav-icon>
       </span>
-      <v-toolbar-title >
-          {{ appTitle }}
+      <v-toolbar-title>
+        <v-btn to="/">
+            {{ appTitle }}
+        </v-btn>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
@@ -43,7 +45,6 @@ export default {
       appTitle: 'Halo Dashboard',
       sidebar: false,
       menuItems: [
-
           { title: 'HMCC', path: '/hmcc'},
           { title: 'Halo Infinite', path: '/halo-infinite'},
       ]

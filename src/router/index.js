@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HMCC from "../views/HMCC/Hmcc.vue";
 import HaloInfinite from "../views/HaloInfinite.vue";
-
+import Home from "../views/Home.vue"
 import PlayerProfile from "../views/PlayerProfile.vue";
 import RecentMatches from "../views/HMCC/RecentMatches.vue";
 
@@ -28,6 +28,11 @@ const routes = [
     path: "/recentMatches/:gamertag",
     name: "RecentMatches",
     component: RecentMatches,
+  },
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
   },
 ];
 
